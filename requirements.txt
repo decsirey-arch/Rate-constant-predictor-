@@ -6,3 +6,4 @@ matplotlib==3.8.0
 catboost==1.2.8
 rdkit == 2022.09.5
 scikit-learn==1.5.1
+shap == 0.45.1
