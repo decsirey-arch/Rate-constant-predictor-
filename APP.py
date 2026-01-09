@@ -97,6 +97,7 @@ if st.button('Predict'):
     st.markdown("### SHAP Explanation for this sample")
 
     fig, ax = plt.subplots(figsize=(10, 5), dpi=120)
-    shap.plots.waterfall(shap_values[0], max_display=5, show=False, matplotlib=True)
+    shap.plots.waterfall(shap_values, max_display=5, show=False, matplotlib=True)
     plt.tight_layout()
     st.pyplot(fig)
+
