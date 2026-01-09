@@ -54,7 +54,7 @@ def load_model():
 
 fp = morgan_fp(1, 1024)
 
-st.title('CatBoost Model Online Prediction')
+st.title('Rate constant predictor')
 
 st.markdown("### Enter molecular and physicochemical features")
 
@@ -100,6 +100,7 @@ if st.button('Predict'):
     shap.plots.waterfall(shap_values[0], max_display=5, show=False)
     plt.tight_layout()
     st.pyplot(fig)
+
 
 
 
