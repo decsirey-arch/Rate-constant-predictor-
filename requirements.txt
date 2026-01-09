@@ -4,4 +4,5 @@ numpy==1.26.4
 pandas==2.2.2
 matplotlib==3.8.0
 catboost==1.2.8
+rdkit == 2022.09.5
 scikit-learn==1.5.1
