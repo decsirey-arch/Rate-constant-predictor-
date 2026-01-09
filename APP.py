@@ -5,6 +5,8 @@ from catboost import CatBoostRegressor
 from rdkit import Chem
 from rdkit.Chem import AllChem
 import pickle
+import shap
+import matplotlib.pyplot as plt
 
 
 class morgan_fp:
@@ -87,3 +89,14 @@ if st.button('Predict'):
     pred = model.predict(X)[0]
 
     st.success(f'The rate constant (logk) for this organic compound is {pred:.6f}')
+
+    # SHAP explanation
+    explainer = shap.TreeExplainer(model)
+    shap_values = explainer(X)
+
+    st.markdown("### SHAP Explanation for this sample")
+
+    fig, ax = plt.subplots(figsize=(10, 5), dpi=120)
+    shap.plots.waterfall(shap_values[0], max_display=5, show=False, matplotlib=True)
+    plt.tight_layout()
+    st.pyplot(fig)
